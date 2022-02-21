@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title> Product-store </title>
+		<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+	</head>
+	
+		<body>
+		
+			<div class="container">
+			<div class="d-flex mb-2"><h2 class="mr-4">Product Category</h2>  <a class="btn btn-danger" href="/displayallproduct">Show All products</a></div>
+			
+			
+			Product Category: <b th:text="*{pro.productCategory}"> </b> <br />
+				
+				
+				
+				
+			<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+			<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+			<script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+		</body>
+</html>

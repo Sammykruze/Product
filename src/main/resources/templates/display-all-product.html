@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title> All Products</title>
+			<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+	</head>
+	
+	<body>
+	<div class="container">
+	<div class="d-flex"><h2> Product List</h2>  
+	<a href="/" class="btn btn-outline-danger"> add-product</a></div>
+	
+	   <form  th:action="@{/search}">
+	    <select class="form-control" th:name="search_param">
+	    	<option th:value="food">Food</option>
+	    	<option th:value="car">Car</option>
+	    	<option th:value="phone">Phone</option>
+	     </select>
+	     	 <button class="btn btn-outline-info">Search</button>
+	    </form>
+		
+		<table class="table table-primary table-hover">
+		  
+		 	<thead class= "table">
+		 		<th> id </th>
+		 		<th> ProductName </th>
+		 		<th> ProductPrice </th>
+		 		<th> ProductCategory </th>
+		 		<th> ProductYear </th>
+		 		<th> CountryProduced </th>
+		 	
+		 	</thead>
+		 	<tr th:each="pro : ${productModel}">
+		 		<td  th:text="${pro.id}"> </td>
+		 		<td  th:text="${pro.productName}"></td>
+		 		<td  th:text="${pro.productPrice}"></td>
+		 		<td  th:text="${pro.productCategory}"></td>
+		 		<td  th:text="${pro.productYear}"></td>
+		 		<td  th:text="${pro.countryProduced}"></td>
+		 		
+		 		
+		 		
+		 		<td>
+		 		    <a class="btn btn-sm" th:href="@{/view-single-product/{id}(id=${pro.id})}">View</a>
+		 			<a class="btn btn-sm" th:href="@{/edit/{id}(id=${pro.id})}">Edit</a>
+		 			<a class="btn btn-sm btn-danger" th:href="@{/delete/{id}(id=${pro.id})}">Delete</a>
+		 			
+		 		</td>
+		 	</tr>
+		</table>
+	</div>
+	
+	<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+			<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+			<script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+	</body>
+</html>
