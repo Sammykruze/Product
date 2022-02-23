@@ -10,14 +10,14 @@
 	<div class="container">
 	<div class="d-flex"><h2> Product List</h2>  
 	<a href="/" class="btn btn-outline-danger"> add-product</a></div>
-	
+	<br>
 	   <form  th:action="@{/search}">
 	    <select class="form-control" th:name="search_param">
 	    	<option th:value="food">Food</option>
 	    	<option th:value="car">Car</option>
 	    	<option th:value="phone">Phone</option>
 	     </select>
-	     	 <button class="btn btn-outline-info">Search</button>
+	     	 <button class="btn btn-outline-primary">Search</button>
 	    </form>
 		
 		<table class="table table-primary table-hover">
